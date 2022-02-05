@@ -55,3 +55,33 @@ Later in the CNN trainin step it will be clearer that this categorization were n
 <p align="center">
   <img src="https://user-images.githubusercontent.com/18638482/152639736-c3ec64ae-5fc6-4597-98b1-da7f6bc185c2.png" width="300" height="300">
 </p>
+
+<h2> Training, testing and results</h2>
+
+<p> Using four labels to pre-classify the dataset used to train de CNN ended up to be a bad idea. CNN architecture is good to find commom patterns in a set of pictures, as long as these patterns are well generalized. Trying to differentiate between 'partially preserved' and 'partially deforested' proved to be unfruitful, with a low accuracy (75%) in small epochs and an increasing overfitting with more epochs.</p>
+
+<p> Thus, a merge between these two labels was made, with considerably better results. Bearing this in mind, this new merged label was once again merged with the label 'totally deforested', creating a binary scenario ('preserved', 'not preserved') with even better results (accuracy of about 90%). These results are shown in the following graphics:</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/18638482/152644965-85e206f9-4927-4aa6-84f1-debb944e8e63.png" width="300">
+    
+  <img src="https://user-images.githubusercontent.com/18638482/152644966-507c5f42-5a8f-4c96-b6dc-b49d63554c5f.png" width="300">
+
+  <img src="https://user-images.githubusercontent.com/18638482/152644967-38d06e63-c7ec-49c3-9240-04240e9a8edf.png" width="300">
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/18638482/152644968-5cbd3d66-11b7-4cdc-8c91-fd3b2d20f681.png" width="300">
+    
+  <img src="https://user-images.githubusercontent.com/18638482/152644970-1de5d5a1-4300-46f2-b5d0-cba61a22a5ca.png" width="300">
+
+  <img src="https://user-images.githubusercontent.com/18638482/152644973-355faee3-6786-4dd4-9a67-087d21a2b541.png" width="300">
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/18638482/152644974-c0c8f238-7cb7-4897-9b43-95aaf12a0df0.png" width="300">
+    
+  <img src="https://user-images.githubusercontent.com/18638482/152644975-cbf55c82-bc34-4c7f-8c30-af2c89b211da.png" width="300">
+
+  <img src="https://user-images.githubusercontent.com/18638482/152644976-1cee2e62-a9da-49fc-b071-dc3d8ac74426.png" width="300">
+</p>
