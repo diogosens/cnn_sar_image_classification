@@ -23,6 +23,35 @@
 </p>
 
 <p>In order to remove the aspect of a televison tuned to a dead channel, it is necessary to pre-process the colleceted images. More details on this process will be avaiable in a near future (when my work will be published by the library of Universidade de Brasília). For the time being, it suffices to say that the original image turned into 27 new image as the one that follows:</p>
+
 <img src="https://user-images.githubusercontent.com/18638482/152607714-cb46ef39-1053-43ca-8401-cdc4ffa8d563.png">
 
-Everyone of these new images were sliced in small chunks, resulting in about 1800 samples that comprised the dataset to be used to train the neural network that has yet to be developed.
+<p>Everyone of these new images were sliced in small chunks, resulting in about 1800 samples that comprised the dataset to be used to train the neural network that has yet to be developed.</p>
+
+<h2>Labelling the samples</h2>
+
+<p>As the above picture can demonstrate, the resulting faux-colors of the pre-processing step highlight the contrast between the areas where the forest is preserved and those where there are deforestation hotspots. Using high-resolution optical images of the same region as a complementary guide, every sample was manually labeled as one of these four categories:
+  
+  <ul>
+    <li>totally preserved, when there is no trace of deforestation;</li>
+    <li>partially preserved, when there is some trace of deforestation, but the preserved prevail;</li>
+    <li>partially deforested, when the deforested area is the prevailing feature;</li>
+    <li>totally deforested, when there is no trace of preserved area.</li>
+  </ul>
+
+Later in the CNN trainin step it will be clearer that this categorization were not optimal, to say the least.
+
+<h2> Developing de convolutional neural network</h2>
+
+<p>CNN is a deep neural network specifically developed to be applied in the recognition of visual pattern. This architecture is made by two kinds of hidden layers:</p>
+
+<ul>
+  <li>a convolutional layer (as the name goes), that pass a small window (the filter) through the input image, making a convolutional operation (dot product) between the filter and every chunck of pixels comprised in the perception window;</li>
+  <li>a pooling layer, that gets as an input the output of the convolutional layer and makes a dimensional reduction operation, normally a mean operation with a given number (2x2, 3x3, depending on the desired reduction) of inputs.</li>
+</ul>
+  
+<p>These operations are well suited in finding patterns in a picture with a good amount of generalization in order to prevent overfitting. The CNN developed for this work can be seen in the following picture: </p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/18638482/152639736-c3ec64ae-5fc6-4597-98b1-da7f6bc185c2.png" width="300" height="300">
+</p>
